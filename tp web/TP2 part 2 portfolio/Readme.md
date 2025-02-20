@@ -33,12 +33,13 @@ Je suis Noura CHERRAD, développeuse web passionnée et étudiante en Master en 
 3. Ouvrez `index.html` dans votre navigateur.
 
 ## 📸 Aperçu  here's my sections 
-![image](https://github.com/user-attachments/assets/76f0cc82-2455-4c93-a5ea-436dbcf1fdc8)
-![image](https://github.com/user-attachments/assets/59616a76-9fcd-4e96-81a4-2c4d840df7e5)
-![image](https://github.com/user-attachments/assets/9d435322-14d3-4a58-a9f7-cadc3a78e286)
-![image](https://github.com/user-attachments/assets/20662c4b-8379-4786-b138-d6c7477c2797)
-![image](https://github.com/user-attachments/assets/4b972816-e200-4f8a-a06a-d3830d622afa)
-![image](https://github.com/user-attachments/assets/4cc27253-35f1-4830-8529-913e9b0f0fd8)
+![image](https://github.com/user-attachments/assets/cfaf7591-bae7-4f58-8adb-4307349947fc)
+![image](https://github.com/user-attachments/assets/1dfa8e3d-bd62-4ce6-a877-1e94a4de095e)
+![image](https://github.com/user-attachments/assets/5490b0b8-8bed-4b08-96d3-b365927f3c62)
+![image](https://github.com/user-attachments/assets/7ce9a17b-6480-4dba-8179-fb2d2ecc386d)
+![image](https://github.com/user-attachments/assets/5a80131a-1095-4dc7-bf39-44564155ae43)
+![image](https://github.com/user-attachments/assets/6d6f4859-8b07-465e-9221-5fd779b2b41d)
+
 
 
 ## 📞 Contact
