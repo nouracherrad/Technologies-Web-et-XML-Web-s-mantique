@@ -34,9 +34,7 @@ Le style est appliqué directement dans une balise `<style>` dans le `<head>` du
   - Largeur de 200px, arrondie avec une couleur de fond blanche et un effet de survol qui change la couleur d'arrière-plan.
 
 ## Résultat Visuel
-_Ajoute ici une capture d'écran de ton projet._
+![image](https://github.com/user-attachments/assets/ef9e727b-56f7-4e1e-a17b-b0ad3158f0e3)
 
----
 
-Tu peux modifier ce README en fonction des détails supplémentaires que tu souhaites ajouter. 😊
 
