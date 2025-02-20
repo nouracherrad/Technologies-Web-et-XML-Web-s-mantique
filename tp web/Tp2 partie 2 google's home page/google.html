@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google</title>
+    <style>
+        #div1 {
+    display: flex;
+    align-items: center;
+    gap: 15px; 
+    justify-content: flex-end; }
+#div1 a {
+    text-decoration: none;
+    color: black;
+}
+
+
+        #compte {
+            background: #000;
+            border-radius: 30%;
+            color: rgb(240, 248, 255);
+        }
+        #div2{
+            border: transparent;
+            margin-top: 200px;
+            margin-bottom: 50px;
+            margin-right: 200px;
+            margin-left: 600px;
+        }
+
+
+        .search-bar-container {
+    display: flex;
+    justify-content: center; 
+    width: 100%; 
+}
+#div4 {
+    display: flex; /* Active Flexbox */
+    justify-content: end; /* Aligne tout à droite */
+     
+    width: 250px;
+    background: white;
+    border-radius: 30px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    gap: 10px; /* Ajoute un espace entre les éléments */
+}
+
+#div4 :hover {
+background: rgb(194, 194, 254);
+}
+#div4 svg {
+    width: 20px; 
+    height: 20px;
+    cursor: pointer;
+}
+
+button {
+    font-size: 14px;
+    width: 200px;
+    background: white;
+    border-radius: 30px;
+    padding: 5px;
+    border: transparent;
+    
+}
+.search-bar-container {
+    display: flex;
+    justify-content: center; 
+    width: 100%; 
+    margin-bottom: 200px;
+}
+.search-bar {
+    display: flex;
+    width: 600px;
+    background: white;
+    border-radius: 30px;
+    padding: 10px 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.search-bar input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 8px;
+}
+
+.icon {
+
+    width: 24px;
+    height: 24px;
+    margin: 0 8px;
+    cursor: pointer;
+}
+        </style>
+        
+</head>
+<body style="display: flex;flex-direction: column;">
+    <div id="div1">
+        <a href="https://mail.google.com/mail/u/0/#inbox">Gmail</a>
+        <a href="https://www.google.com/imghp?hl=fr&tab=ri&authuser=0&ogbl">Images</a>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid-3x3-gap-fill" viewBox="0 0 16 16">
+            <path d="M1 2a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 7a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1zM1 12a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1zm5 0a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-2a1 1 0 0 1-1-1z"/>
+          </svg>
+        <label for="" id="compte">N</label>
+    </div>
+    <div id="div2">
+        <img src="googlelogo_color_272x92dp (1).png" alt="google logo">
+    </div>
+<div id="div3">
+   <div class="search-bar-container">
+        <div class="search-bar">
+            <img src="recherche.jpeg" alt="Search" class="icon">
+            <input type="text" placeholder="Effectuez une recherche sur Google ou saisissez une URL">
+            <img src="micro.jpeg" alt="Microphone" class="icon">
+            <img src="cam.jpeg" alt="Camera" class="icon">
+            </div>
+    </div>
+</div>
+<div style="display: flex; justify-content: end;">
+<div id="div4" >
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pen-fill" viewBox="0 0 16 16">
+            <path d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001"/>
+          </svg>
+          <button>personaliser chrome</button>
+    
+</div></div>
+</body>
+</html>

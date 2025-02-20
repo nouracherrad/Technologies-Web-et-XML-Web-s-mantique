@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+function triangle1(taille) {
+    let i = 1;
+    while (i <= taille) {
+        console.log("*".repeat(i));
+        i++;
+    }
+}
+
+function triangle2(taille) {
+    for (let j= 1; j <= taille; j++) {
+        console.log("*".repeat(j));
+    }
+}
+
+// Exemple d'utilisation
+let taille = parseInt(prompt("Entrez la taille :"));
+console.log(" le resultat de la fonction  avec while:");
+triangle1(taille);
+console.log(" le resultat de la  fonction avec for:");
+triangle2(taille);
+</script>
+
+</body>
+</html>

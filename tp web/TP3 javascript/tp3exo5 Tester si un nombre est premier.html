@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function Premier(n) {
+      for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) {
+            console.log(n+" n'est pas un nombre premier. et divisible par"+i);
+            return;  }
+    }
+    console.log(n+"est un nombre premier.");
+
+}
+let  n = prompt("Donner un nombre");
+        Premier(n);
+    </script>
+    
+</body>
+</html>

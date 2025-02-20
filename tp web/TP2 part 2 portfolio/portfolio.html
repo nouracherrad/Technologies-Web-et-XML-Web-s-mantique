@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Portfolio - Noura CHERRAD</title>
+    <style>
+        html,body{
+            scroll-behavior: smooth;
+        }
+        :root {
+            --primary-color: #033b4a;
+            --secondary-color: #20c997;
+            --gray: #4a4a4d;
+            --bg-primary: #ecf0f3;
+            --bg-secondary: #fbdefe;
+            --bg-tertiary: #e3f2fd;
+            --bg-quaternary: #ebe5ba;
+            --bg-Quinary:#ffdafa;
+            --bg-Senary :#c6c69b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--gray);
+        }
+
+        h1, h2, h3 {
+            font-family: 'Saira', sans-serif;
+            color: var(--primary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        header {
+            background-color: var(--bg-primary);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .navbar {
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .navbar nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        .navbar nav ul {
+            display: flex;
+            gap: 20px;
+        }
+
+        .navbar nav ul li a {
+            font-weight: 500;
+        }
+
+        #logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .content {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Home Section */
+        #home {
+            background-color: var(--bg-primary);
+        }
+
+        #home .content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        #home .text {
+            max-width: 600px;
+        }
+
+        #home h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #home h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        #home p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            animation: fadeIn 3s ease-in-out;
+        }
+
+        #home .photo-container {
+            flex-shrink: 0;
+        }
+
+        #home .photo-container img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* About Section */
+        #about {
+            background-color: var(--bg-secondary);
+        }
+
+        #about h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        /* Services Section */
+        #services {
+            background-color: var(--bg-tertiary);
+        }
+
+        #services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #services ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        #services ul li {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-size: 1.1rem;
+        }
+
+        /* Projects Section */
+        #projects {
+            background-color: var(--bg-quaternary);
+        }
+
+        #projects h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #projects ul {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        #projects ul li {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            font-size: 1.1rem;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--bg-Senary);
+        }
+
+        #contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #contact ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #contact ul li {
+            font-size: 1.2rem;
+        }
+        /* Skills Section */ #skills { background-color: var( --bg-Quinary); } #skills h2 { font-size: 2.5rem; margin-bottom: 40px; text-align: center; } #skills .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; } #skills .skill-category { background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); } #skills .skill-category h3 { font-size: 1.5rem; margin-bottom: 15px; } #skills .skill-category ul li { font-size: 1.1rem; margin-bottom: 10px; padding-left: 20px; position: relative; } #skills .skill-category ul li::before { content: "▹"; position: absolute; left: 0; color: var(--secondary-color); }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Animations */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.timeline-item {
+    animation: slideIn 1s ease-in-out;
+}
+
+.skill-card {
+    animation: fadeIn 1s ease-in-out;
+}
+footer {
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <nav>
+                <label for="" id="logo">CHERRAD Noura</label>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="content">
+            <div class="text">
+                <h2>Hi There, I'm</h2>
+                <h1>Noura CHERRAD</h1>
+                <p>
+                    Passionate Web Developer and Lifelong Learner
+                </p>
+                <p>
+                    With a strong foundation in network and multimedia engineering and currently pursuing a master's degree in distributed systems and artificial intelligence, I strive to create innovative and impactful digital solutions. My goal is to demystify the complexities of technology and make it accessible to everyone.
+                </p>
+            </div>
+            <div class="photo-container">
+                <img src="nouraa.jpg" alt="Noura CHERRAD"> <!-- Replace with your photo path -->
+            </div>
+        </div>
+    </section>
+
+ <!-- About Section -->
+<section id="about">
+    <div class="content">
+        <h2>About Me</h2>
+        <p>
+            I'm Noura CHERRAD, a passionate web developer and a lifelong learner. With a strong foundation in network and multimedia engineering and currently pursuing a master's degree in distributed systems and artificial intelligence, I strive to create innovative and impactful digital solutions.
+        </p>
+        <div class="skills-interests">
+            <div class="skill-card">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Passionate about building modern and responsive websites.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-brain"></i>
+                <h3>Artificial Intelligence</h3>
+                <p>Exploring the world of AI and machine learning.</p>
+            </div>
+            <div class="skill-card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Design</h3>
+                <p>Creating user-friendly and visually appealing interfaces.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="content">
+            <h2>My Services</h2>
+            <ul>
+                <li><strong>Web Development:</strong> Creation of modern, responsive, and user-friendly websites using HTML, CSS, JavaScript, and frameworks like React.</li>
+                <li><strong>Network Solutions:</strong> Design and implementation of network architectures, including LAN, WAN, and VPN configurations.</li>
+                <li><strong>Multimedia Applications:</strong> Development of multimedia applications, including video/audio processing and streaming solutions.</li>
+                <li><strong>Distributed Systems:</strong> Design and optimization of distributed systems for scalability, reliability, and performance.</li>
+                <li><strong>Artificial Intelligence:</strong> Development of AI-based solutions, including machine learning models and data analysis pipelines.</li>
+                <li><strong>UX/UI Optimization:</strong> Improving user experience and interface design for web and mobile applications.</li>
+                <li><strong>Cloud Computing:</strong> Deployment and management of cloud-based solutions using platforms like AWS, Azure, or Google Cloud.</li>
+                <li><strong>Database Management:</strong> Design and optimization of relational and NoSQL databases for efficient data storage and retrieval.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="content">
+            <h2>My Projects</h2>
+            <ul>
+                <li>Doctoral Recruitment Platform (Front-End)</li>
+                <li>Web Application for Managing Radio MFM's Listeners</li>
+                <li>Personal Portfolio Website</li>
+                <li>Image Compression Extension (IRM)</li>
+                <li>A Desktop Application for Face Recognition</li>
+                <li>Web Application for Food and Cuisine (Front End)</li>
+                <li>Web Application for Managing Radio MFM's Listeners</li>
+            </ul>
+        </div>
+    </section>
+    <section id="skills"> <div class="content"> <h2>Skills</h2> <div class="skills-grid"> <div class="skill-category"> <h3>General</h3> <ul> <li>Creativity</li> <li>Punctuality</li> <li>Volunteering</li> <li>Stress Management</li> </ul> </div> <div class="skill-category"> <h3>Programming Languages</h3> <ul> <li>Object-Oriented Programming (OOP)</li> <li>Unified Modeling Language (UML)</li> <li>Java</li> <li>JavaScript</li> <li>PHP</li> <li>AngularJS</li> <li>CSS</li> <li>HTML5</li> <li>C#</li> <li>Python</li> </ul> </div> <div class="skill-category"> <h3>Experiences</h3> <ul> <li>Web Developer at Oumdin</li> <li>Web Developer at Radio MFM</li> </ul> </div> </div> </div> </section>
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="content">
+            <h2>Contact Me</h2>
+            <ul>
+                <li>📞 Phone: <a href="tel:+212 688626059">+212 688626059</a></li>
+                <li>📧 Email: <a href="mailto:nouracherrad722@gmail.com">nouracherrad722@gmail.com</a></li>
+                <li>🐱 GitHub: <a href="https://github.com/nouracherrad" target="_blank">github.com/nouracherrad</a></li>
+            </ul>
+        </div>
+    </section>
+
+</body>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2023 Noura CHERRAD. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="https://github.com/nouracherrad" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="https://linkedin.com/in/nouracherrad" target="_blank"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="mailto:nouracherrad722@gmail.com"><i class="fas fa-envelope"></i></a></li>
+        </ul>
+    </div>
+</footer>
+</html>
