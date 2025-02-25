@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice Simple</title>
+    <style>
+     
+        .calculatrice {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0;
+            font-size: 18px;
+            text-align: center;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+      
+        #resultat {
+            background: #e9ecef;
+            font-weight: bold;
+            color: black;
+            cursor: default;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculatrice">
+       
+        <input type="text" id="v1" placeholder="Entrer un nombre">
+        <input type="text" id="v2" placeholder="Entrer un autre nombre">
+        
+        <div class="boutons">
+            <button onclick="additionner()">+</button>
+            <button onclick="soustraction()">-</button>
+            <button onclick="division()">/</button>
+            <button onclick="multiplication()">*</button>
+        </div>
+
+        <input type="text" id="resultat" placeholder="Résultat" readonly>
+    </div>
+
+    <script>
+        function additionner(){
+            var v1 = parseFloat(document.getElementById("v1").value);
+            var v2 = parseFloat(document.getElementById("v2").value);
+            document.getElementById("resultat").value = v1 + v2;
+        }
+
+        function soustraction(){
+            var v1 = parseFloat(document.getElementById("v1").value);
+            var v2 = parseFloat(document.getElementById("v2").value);
+            document.getElementById("resultat").value = v1 - v2;
+        }
+
+        function division(){
+            var v1 = parseFloat(document.getElementById("v1").value);
+            var v2 = parseFloat(document.getElementById("v2").value);
+            if(v2 === 0){
+                alert("Erreur : Division par zéro !");
+                document.getElementById("resultat").value = "";
+            } else {
+                document.getElementById("resultat").value = v1 / v2;
+            }
+        }
+
+        function multiplication(){
+            var v1 = parseFloat(document.getElementById("v1").value);
+            var v2 = parseFloat(document.getElementById("v2").value);
+            document.getElementById("resultat").value = v1 * v2;
+        }
+    </script>
+
+</body>
+</html>

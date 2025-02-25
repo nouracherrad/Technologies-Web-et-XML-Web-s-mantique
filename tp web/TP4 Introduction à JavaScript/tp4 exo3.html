@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur d'IMC</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+     
+        .calculatrice {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 320px;
+        }
+        button{
+            background: #0d6efd;
+            color: azure;
+            border-radius: 10%;
+            width :100px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="calculatrice">
+        <h2 class="mb-3">Calculateur d'IMC</h2>
+        <label for="poids" >Poids (kg) :</label>
+        <input type="number" id="poids"  placeholder="Ex: 60">
+        
+        <label for="taille" >Taille (m) :</label>
+        <input type="number" step="0.01" id="taille"  placeholder="Ex: 1.58"><br>
+
+        <button onclick="calculerIMC()">Calculer</button>
+        
+        <p  id="resultat"></p>
+    </div>
+
+    <script>
+        function calculerIMC() {
+            var poids = parseFloat(document.getElementById("poids").value);
+            var taille = parseFloat(document.getElementById("taille").value);
+            var imc = (poids / (taille * taille));
+            var message = "";
+
+            if (imc < 18.5) {
+                message = "Vous êtes en insuffisance pondérale (maigreur).";
+            } else if (imc >= 18.5 && imc < 25) {
+                message = "Votre IMC est normal.";
+            } else if (imc >= 25 && imc < 30) {
+                message = "Vous êtes en surpoids.";
+            } else if (imc >= 30 && imc < 35) {
+                message = "Vous êtes en obésité modérée.";
+            } else if (imc >= 35 && imc < 40) {
+                message = "Vous êtes en obésité sévère.";
+            } else {
+                message = "Vous êtes en obésité morbide ou massive.";
+            }
+
+            document.getElementById("resultat").innerHTML = `Votre IMC est de <b>${imc}</b>. ${message}`;
+        }
+    </script>
+
+</body>
+</html>
