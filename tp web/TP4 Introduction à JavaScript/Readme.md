@@ -207,5 +207,3 @@ En travaillant sur ces projets, vous avez l'occasion de développer une meilleur
 Merci d'avoir exploré ce dépôt et n'hésitez pas à adapter ces exercices à vos besoins ou à les étendre pour de nouveaux défis !
 
 ---
-
-J'ai fait quelques ajustements pour corriger la syntaxe et rendre le fichier plus fluide. N'hésite pas à me faire savoir si tu souhaites d'autres modifications !
