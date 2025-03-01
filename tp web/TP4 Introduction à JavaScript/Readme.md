@@ -137,24 +137,51 @@ Une calculatrice scientifique qui permet de réaliser des calculs plus avancés 
 - Calculs mathématiques avancés : π, e, x², exponentielle, etc.
 
 ### Code JavaScript :
-```javascript
-function appendToDisplay(value) {
-    document.getElementById("display").value += value;
-}
+```<script>
+        let inverseMode = false;
 
-function calculate() {
-    try {
-        var result = eval(document.getElementById("display").value);
-        document.getElementById("display").value = result;
-    } catch (e) {
-        document.getElementById("display").value = "Erreur";
-    }
-}
+        function appendToDisplay(value) {
+            document.getElementById('display').value += value;
+        }
 
-function toggleInverse() {
-    // Fonction pour gérer l'inverse des fonctions mathématiques
-    // Exemple : sin(x) -> arcsin(x), cos(x) -> arccos(x), etc.
-}
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+
+        function calculate() {
+            try {
+                let expression = document.getElementById('display').value;
+
+                // Remplacer les fonctions trigonométriques et logarithmiques par les versions JavaScript
+                expression = expression.replace(/sin\(/g, 'sin(');
+                expression = expression.replace(/cos\(/g, 'cos(');
+                expression = expression.replace(/tan\(/g, 'tan(');
+                expression = expression.replace(/log\(/g, 'log10(');
+                expression = expression.replace(/ln\(/g, 'log(');
+                expression = expression.replace(/√/g, 'Math.sqrt(');
+                
+                // Calculer l'expression
+                console.log(expression)
+                let result = eval(expression);
+                document.getElementById('display').value = result;
+            } catch (error) {
+                document.getElementById('display').value = 'Erreur';
+            }
+        }
+
+        function toggleInverse() {
+            inverseMode = !inverseMode;
+            if (inverseMode) {
+                document.querySelector('button[onclick="appendToDisplay(\'Math.sin(\')"]').innerText = "sin⁻¹";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.cos(\')"]').innerText = "cos⁻¹";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.tan(\')"]').innerText = "tan⁻¹";
+            } else {
+                document.querySelector('button[onclick="appendToDisplay(\'Math.sin(\')"]').innerText = "sin";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.cos(\')"]').innerText = "cos";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.tan(\')"]').innerText = "tan";
+            }
+        }
+    </script>
 ```
 
 ### Exemple d'utilisation :
