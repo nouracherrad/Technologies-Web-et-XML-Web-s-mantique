@@ -19,7 +19,7 @@ Ce projet consiste à permuter les valeurs de deux champs de texte (`v1` et `v2`
 - Permute les valeurs de deux champs de texte avec un simple bouton.
 
 ### Code JavaScript :
-```javascript
+javascript
 function permuter() {
     var v1 = document.getElementById("v1");
     var v2 = document.getElementById("v2");
