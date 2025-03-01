@@ -1,49 +1,121 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculatrice Scientifique</title>
-  
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .calculator {
+            width: 400px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            display: grid;
+            grid-template-rows: auto auto 1fr;
+            gap: 10px;
+        }
+        .display {
+            width: 100%;
+            height: 50px;
+            text-align: right;
+            font-size: 1.5em;
+            padding: 10px;
+            border: none;
+            background: #eaeaea;
+            border-radius: 5px;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 5px;
+        }
+        .numbers {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 5px;
+        }
+        .operations, .scientific {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 5px;
+        }
+        button {
+            padding: 15px;
+            font-size: 1.2em;
+            border: none;
+            cursor: pointer;
+            background: #b0b0b0;
+            border-radius: 5px;
+        }
+        .equal {
+            background: #28a745;
+            color: white;
+        }
+        .clear {
+            background: #dc3545;
+            color: white;
+        }
+    </style>
 </head>
 <body>
 
     <div class="calculator">
         <input type="text" class="display" id="display" disabled>
-        <div class="buttons">
-            <button onclick="clearDisplay()" class="clear">CE</button>
-            <button onclick="appendToDisplay('(')">(</button>
-            <button onclick="appendToDisplay(')')">)</button>
-            <button onclick="appendToDisplay('%')" class="operator">%</button>
-
+        
+        <div class="scientific">
+            <button onclick="toggleInverse()">Inv</button>
+            <button onclick="appendToDisplay('Math.PI')">π</button>
+            <button onclick="appendToDisplay('Math.E')">e</button>
+            <button onclick="appendToDisplay('Math.exp(')">EXP</button>
             <button onclick="appendToDisplay('sin(')">sin</button>
             <button onclick="appendToDisplay('cos(')">cos</button>
             <button onclick="appendToDisplay('tan(')">tan</button>
-            <button onclick="appendToDisplay('/')" class="operator">÷</button>
-
+            <button onclick="appendToDisplay('Math.sqrt(')">√</button>
+            <button onclick="appendToDisplay('ln(')">ln</button>
+            <button onclick="appendToDisplay('log(')">log</button>
+            <button onclick="appendToDisplay('**2')">x²</button>
+            <button onclick="appendToDisplay('**')">x^</button>
+        </div>
+        
+        <div class="numbers">
             <button onclick="appendToDisplay('7')">7</button>
             <button onclick="appendToDisplay('8')">8</button>
             <button onclick="appendToDisplay('9')">9</button>
-            <button onclick="appendToDisplay('*')" class="operator">×</button>
-
             <button onclick="appendToDisplay('4')">4</button>
             <button onclick="appendToDisplay('5')">5</button>
             <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('-')" class="operator">-</button>
-
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
             <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('+')" class="operator">+</button>
-
-            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('1')">1</button>
             <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="appendToDisplay('0')">0</button>
             <button onclick="calculate()" class="equal">=</button>
+        </div>
+        
+        <div class="operations">
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('*')">×</button>
+            <button onclick="appendToDisplay('/')">÷</button>
+            <button onclick="clearDisplay()" class="clear">CE</button>
+            <button onclick="appendToDisplay('(')">(</button>
+            <button onclick="appendToDisplay(')')">)</button>
+            <button onclick="appendToDisplay('%')">%</button>
         </div>
     </div>
 
     <script>
+        let inverseMode = false;
+
         function appendToDisplay(value) {
             document.getElementById('display').value += value;
         }
@@ -53,22 +125,28 @@
         }
 
         function calculate() {
-            let expression = document.getElementById('display').value;
-
             try {
-                expression = expression.replace(/sin\(/g, 'Math.sin(');
-                expression = expression.replace(/cos\(/g, 'Math.cos(');
-                expression = expression.replace(/tan\(/g, 'Math.tan(');
-                expression = expression.replace(/÷/g, '/');
-                expression = expression.replace(/×/g, '*');
-
-                let result = eval(expression);
+                let result = eval(document.getElementById('display').value);
                 document.getElementById('display').value = result;
             } catch (error) {
                 document.getElementById('display').value = 'Erreur';
+            }
+        }
+
+        function toggleInverse() {
+            inverseMode = !inverseMode;
+            if (inverseMode) {
+                document.querySelector('button[onclick="appendToDisplay(\'sin(\')"]').innerText = "sin⁻¹";
+                document.querySelector('button[onclick="appendToDisplay(\'cos(\')"]').innerText = "cos⁻¹";
+                document.querySelector('button[onclick="appendToDisplay(\'tan(\')"]').innerText = "tan⁻¹";
+            } else {
+                document.querySelector('button[onclick="appendToDisplay(\'sin(\')"]').innerText = "sin";
+                document.querySelector('button[onclick="appendToDisplay(\'cos(\')"]').innerText = "cos";
+                document.querySelector('button[onclick="appendToDisplay(\'tan(\')"]').innerText = "tan";
             }
         }
     </script>
 
 </body>
 </html>
+
