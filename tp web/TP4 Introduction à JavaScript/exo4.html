@@ -76,12 +76,12 @@
             <button onclick="appendToDisplay('Math.PI')">π</button>
             <button onclick="appendToDisplay('Math.E')">e</button>
             <button onclick="appendToDisplay('Math.exp(')">EXP</button>
-            <button onclick="appendToDisplay('sin(')">sin</button>
-            <button onclick="appendToDisplay('cos(')">cos</button>
-            <button onclick="appendToDisplay('tan(')">tan</button>
+            <button onclick="appendToDisplay('Math.sin(')">sin</button>
+            <button onclick="appendToDisplay('Math.cos(')">cos</button>
+            <button onclick="appendToDisplay('Math.tan(')">tan</button>
             <button onclick="appendToDisplay('Math.sqrt(')">√</button>
-            <button onclick="appendToDisplay('ln(')">ln</button>
-            <button onclick="appendToDisplay('log(')">log</button>
+            <button onclick="appendToDisplay('Math.log(')">ln</button>
+            <button onclick="appendToDisplay('Math.log10(')">log</button>
             <button onclick="appendToDisplay('**2')">x²</button>
             <button onclick="appendToDisplay('**')">x^</button>
         </div>
@@ -126,7 +126,19 @@
 
         function calculate() {
             try {
-                let result = eval(document.getElementById('display').value);
+                let expression = document.getElementById('display').value;
+
+                // Remplacer les fonctions trigonométriques et logarithmiques par les versions JavaScript
+                expression = expression.replace(/sin\(/g, 'sin(');
+                expression = expression.replace(/cos\(/g, 'cos(');
+                expression = expression.replace(/tan\(/g, 'tan(');
+                expression = expression.replace(/log\(/g, 'log10(');
+                expression = expression.replace(/ln\(/g, 'log(');
+                expression = expression.replace(/√/g, 'Math.sqrt(');
+                
+                // Calculer l'expression
+                console.log(expression)
+                let result = eval(expression);
                 document.getElementById('display').value = result;
             } catch (error) {
                 document.getElementById('display').value = 'Erreur';
@@ -136,17 +148,16 @@
         function toggleInverse() {
             inverseMode = !inverseMode;
             if (inverseMode) {
-                document.querySelector('button[onclick="appendToDisplay(\'sin(\')"]').innerText = "sin⁻¹";
-                document.querySelector('button[onclick="appendToDisplay(\'cos(\')"]').innerText = "cos⁻¹";
-                document.querySelector('button[onclick="appendToDisplay(\'tan(\')"]').innerText = "tan⁻¹";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.sin(\')"]').innerText = "sin⁻¹";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.cos(\')"]').innerText = "cos⁻¹";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.tan(\')"]').innerText = "tan⁻¹";
             } else {
-                document.querySelector('button[onclick="appendToDisplay(\'sin(\')"]').innerText = "sin";
-                document.querySelector('button[onclick="appendToDisplay(\'cos(\')"]').innerText = "cos";
-                document.querySelector('button[onclick="appendToDisplay(\'tan(\')"]').innerText = "tan";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.sin(\')"]').innerText = "sin";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.cos(\')"]').innerText = "cos";
+                document.querySelector('button[onclick="appendToDisplay(\'Math.tan(\')"]').innerText = "tan";
             }
         }
     </script>
 
 </body>
 </html>
-
