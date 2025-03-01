@@ -9,7 +9,6 @@ Ce dépôt contient plusieurs projets réalisés en HTML et JavaScript, destiné
 3. **Exercice 3 : Calculateur d'IMC**
 4. **Exercice 4 : Calculatrice Scientifique**
 
----
 
 ## Exercice 1 : Permutation de valeurs
 
